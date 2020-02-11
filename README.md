@@ -40,9 +40,9 @@ Syntax | Description
 `ADDI lsX {8-Bit}` | X=X+Number Stores to same location as it loaded
 `SUBI lsX {8-Bit}` | X=X-Number
 `(logic w/ Imm) lsX {8-Bit}` | X= X (logic) number ,logic: `ORI`, `NANDI`, `XORI`, `XORI`
-`SWP lrX {**5**-Bit} srY` | Memory Swap: Contents of X to Cell {Number}, Cell's contents to Y
+`SWP lrX {5-Bit} srY` | Memory Swap: Contents of X to Cell {Number}, Cell's contents to Y
 `SWPNT lrX srY` | Swap using Pointer as address. Pointer value is the content the previous instruction loaded as its first Input. You can also use this with `SWP` by attaching `<pnt>`, this will OR the Number with the pointer.
-`JMP {**6**-Bit} <st>` | Jump to specified Instruction. **The CPU has a 2-Instruction Branch delay.** *st* will stall these next 2 instructions **if** the branch is taken. (Always true for JMP). Otherwise they will execute.
+`JMP {6-Bit} <st>` | Jump to specified Instruction. **The CPU has a 2-Instruction Branch delay.** *st* will stall these next 2 instructions **if** the branch is taken. (Always true for JMP). Otherwise they will execute.
 `BEQ {6-Bit} <st> <ns>` | Upon A-B, branch if A equals B. *ns* will disable the previous instructions store. Very useful when comparing with Immediates or just saving register space.
 `BGT {6-Bit} <st> <ns>` | branch if A>B
 `BGE {6-Bit} <st> <ns>` | branch if A>=B (Carry Out Flag)

@@ -28,10 +28,10 @@ X, Y, Z: Registers. (0-7)
 ß: IO Port (0-3)
 
 Syntax | Description
--------|-----------
+-----------------------------|-----------
 `NOP` | Does nothing. Essentially a "Wait" Instruction
 `ADD lrX lrY srZ` <add1> | Register Z = RegX + RegY. Optionally also adds 1 to Z
-`ADDC lrX lrY srZ` | Adds with Carry (Z=X+Y)
+`ADC lrX lrY srZ` | Adds with Carry (Z=X+Y)
 `SUB lrX lrY srZ` | Z=X-Y
 `(bitwise logic) lrX lrY srZ` | Z= X (logic) Y ,logic: `OR`, `NAND`, `XOR`, `AND`
 `SHR lrX srZ` | logical right shift of X, stored to Z

@@ -31,7 +31,7 @@ X, Y, Z: Registers. (0-7)
 Syntax | Description
 -------------------------------------------------------|-----------
 `NOP` | Does nothing. Essentially a "Wait" Instruction
-`ADD lrX lrY srZ` <add1> | Register Z = RegX + RegY. Optionally also adds 1 to Z
+`ADD lrX lrY srZ <add1>` | Register Z = RegX + RegY. Optionally also adds 1 to Z
 `ADC lrX lrY srZ` | Adds with Carry (Z=X+Y)
 `SUB lrX lrY srZ` | Z=X-Y
 `(logic) lrX lrY srZ` | Z= X (logic) Y ,logic: `OR`, `NAND`, `XOR`, `AND`

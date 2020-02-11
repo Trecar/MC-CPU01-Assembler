@@ -59,6 +59,6 @@ Syntax | Description
 Whatever your text editor might say, **instruction adressing start at 0**. Your code can have a **maxium of 64 instructions** (0d to 63d). 
 
 ## Source Code
-To create Schematics, Querz' wonderful NBT library is used. (github.com/querz/NBT)
+To create Schematics, Querz' wonderful NBT library is used. https://github.com/querz/NBT
   
   

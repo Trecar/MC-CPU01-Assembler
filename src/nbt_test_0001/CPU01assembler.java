@@ -368,7 +368,7 @@ public class CPU01assembler {
     	//INPUT
     	case 7 :
     		String inPort=asbNum(exprArray[1].charAt(exprArray[1].length()-1)+"d", 2);
-    		output="0101" + asbNum(exprArray[1], 6) + inPort.charAt(0);
+    		output="0101" + asbNum(exprArray[3], 6) + inPort.charAt(0);
     		if(exprArray.length>4 && exprArray[4].equals("st")) {
     			output+="1";
     		}else {

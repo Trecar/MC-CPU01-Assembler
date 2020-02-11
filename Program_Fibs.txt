@@ -1,0 +1,8 @@
+LIM  sr1 0d
+LIM  sr2 1d
+SWP  lr1 15d  sr0
+ADD  lr1 lr2  sr1
+SWP  lr1 15d  sr2
+JMP  3d
+XORI ls1 233d
+BZR  0d  ns st

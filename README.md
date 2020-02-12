@@ -51,12 +51,18 @@ Syntax | Description
 `BTR {6-Bit} <st> <ns>` | branch if prev. Result all 1s /255d /FFh (255 flag=true)
 `BNT {6-Bit} <st> <ns>` | branch if prev. Result not 255d (255 flag=false)
 `BUF {6-Bit} <st> <ns>` | branch if underflow (After `SHR`)
-`INP pß srX {6-Bit Number <st>}` | If new Input at input port ß, store in Reg. X. Otherwise branch to specified Instruction
+`INP pß srX {6-Bit Number} <st>` | If new Input at input port ß, store in Reg. X. Otherwise branch to specified Instruction
 `OUT lrX pß <OiR>` | Contents of Reg. X to output port ß. *OiR*: Only do this **if** the device requests it. No Output being executed will be indicated by setting the Zero-Flag to false.
 `SETUP <zrr> <2C>` | *zrr*: Set Register 0 to Zero Register. Reading from r0 will return 0, but it will still store. Leaving *zrr* out will set it to a GPR. *2C*: Set decimal display mapped to Memory Cell 15d / Fh to 2's Complement Mode (Range: -128 to 127). If left out, will set display to 0's Complement (Range: 0 to 255)
   
 ### Writing Code
 Whatever your text editor might say, **instruction adressing start at 0**. Your code can have a **maxium of 64 instructions** (0d to 63d). 
+
+Ingame, enabling the HacF63 lever will allow the CPU to Halt (and power off) upon reaching instruction 63d. This instruction will still execute before the CPU stops. If you leave this lever off, the program counter will loop back to 0d, and, more importantly, the CPU will not be able to power itself off. So should your connection be very bad, and the ensuring lag kick you off a server, you should try writing code that terminates.
+
+Please also refer to the example program `Program_Fibs.txt` for further guidance. Its Fibonacci that resets itself to 0 before overflowing and repeats until you turn the CPU off. It uses the `SWP` instruction to both display the value and swap the values for the add instruction, allowing a resetting Fibs to be written with only 8 instruction.
+
+Lastly, be aware that there is no "Reset" for any Memory. You should treat any value in memory or registers as unknown at the start of your program, and initialize values accordingly.
 
 ## Source Code
 To create Schematics, Querz' wonderful NBT library is used. https://github.com/querz/NBT

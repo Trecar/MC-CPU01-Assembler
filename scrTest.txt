@@ -1,0 +1,19 @@
+LIM  sr1   2d
+LIM  sr2   1d
+LIM  sr3  14d
+LIM  sr4   8d
+LIM  sr5   0d
+SUB  lr4  lr2  sr4
+SUB  lr3  lr1  sr6
+SWP  lr1  31d  sr0
+ADD  lr5  lr4  sr5
+SWP  lr2  31d  sr0
+ADD  lr5  lr5  sr7
+SUB  lr6  lr7  sr0
+BGT  15d   ns   st
+ADDI ls2   1d
+SUB  lr5  lr6  sr5
+ADDI ls1  1d
+JMP   7d
+SUB  lr1  lr3 sr0
+BGT  63d   ns  st
